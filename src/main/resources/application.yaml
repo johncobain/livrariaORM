@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: livrariaORM
+  datasource:
+    url: jdbc:postgresql://localhost:5555/livraria
+    username: libuser
+    password: libpass
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  devtools:
+    restart:
+      enabled: true
+      poll-interval: 1s
+      quiet-period: 400ms
+      additional-paths: src/main/java
+    livereload:
+      enabled: true
+    remote:
+      restart:
+        enabled: true
+  security:
+    user:
+      name: user
+      password: password
+
+info:
+  app:
+    version: @project.version@
+
+api:
+  security:
+    token:
+      secret: 38c28ba15612c9ea0e9b856d9b6d1d709cc606994173bcd1b0a3816dc596ac0c
