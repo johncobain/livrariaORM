@@ -10,7 +10,7 @@
     </parent>
     <groupId>br.com.johncobain</groupId>
     <artifactId>livrariaORM</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
     <name/>
     <description/>
     <url/>
@@ -72,6 +72,11 @@
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-test</artifactId>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.auth0</groupId>
+            <artifactId>java-jwt</artifactId>
+            <version>4.5.0</version>
         </dependency>
     </dependencies>
 
