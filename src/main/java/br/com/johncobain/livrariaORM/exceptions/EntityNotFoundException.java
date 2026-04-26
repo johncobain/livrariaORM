@@ -1,0 +1,22 @@
+package br.com.johncobain.livrariaORM.exceptions;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.web.server.ResponseStatusException;
+
+public class EntityNotFoundException extends ResponseStatusException {
+  public EntityNotFoundException(String message) {
+    super(HttpStatus.NOT_FOUND, message);
+  }
+
+  public EntityNotFoundException(Long id) {
+    super(HttpStatus.NOT_FOUND, "Entidade não encontrada com id: " + id);
+  }
+
+  public EntityNotFoundException(String name, Long id) {
+    super(HttpStatus.NOT_FOUND, name + " não encontrada com id: " + id);
+  }
+
+  public EntityNotFoundException(String name, String attribute, String attributeName) {
+    super(HttpStatus.NOT_FOUND, name + " não encontrada com " + attribute + ": " + attributeName);
+  }
+}
