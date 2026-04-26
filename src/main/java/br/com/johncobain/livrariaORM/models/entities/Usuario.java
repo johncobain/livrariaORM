@@ -1,5 +1,6 @@
 package br.com.johncobain.livrariaORM.models.entities;
 
+import br.com.johncobain.livrariaORM.dtos.usuario.UsuarioFormDto;
 import br.com.johncobain.livrariaORM.models.enums.Status;
 import jakarta.persistence.*;
 import org.springframework.security.core.GrantedAuthority;
@@ -73,7 +74,7 @@ public class Usuario implements UserDetails {
 
   public Usuario(){}
 
-  public Usuario(String nome, String cpf, String email, String senha, String telefone, String cep, Integer numero, String complemento, Status status, Set<Role> roles) {
+  public Usuario(String nome, String cpf, String email, String senha, String telefone, String cep, Integer numero, String complemento, Set<Role> roles) {
     this.nome = nome;
     this.cpf = cpf;
     this.email = email;
@@ -82,8 +83,18 @@ public class Usuario implements UserDetails {
     this.cep = cep;
     this.numero = numero;
     this.complemento = complemento;
-    this.status = status;
     this.roles = roles;
+  }
+
+  public Usuario(UsuarioFormDto dto){
+    this.nome = dto.nome();
+    this.cpf = dto.cpf();
+    this.email = dto.email();
+    this.senha = dto.senha();
+    this.telefone = dto.telefone();
+    this.cep = dto.cep();
+    this.numero = dto.numero();
+    this.complemento = dto.complemento();
   }
 
   public Long getId() { return id; }
